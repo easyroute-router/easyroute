@@ -2,9 +2,9 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.10.4",
+    "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-typescript": "^6.0.0",
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.13",
@@ -16,6 +16,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "lerna": "^4.0.0",
     "lint-staged": "^10.4.0",
     "node-notifier": ">=8.0.1",
     "prettier": "^2.0.5",
@@ -29,8 +30,11 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --hoist --no-ci",
     "build": "lerna run build --concurrency=1 --stream",
     "test": "lerna run test --concurrency=1 --stream"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

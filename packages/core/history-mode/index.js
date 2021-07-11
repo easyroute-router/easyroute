@@ -1,7 +1,6 @@
-import { isBrowser } from '../lib/utils';
-
-const stripBase = (url, base) => (Boolean(base) ? url.replace(base, '') : url);
-const deleteLastSlash = (url) => url.replace(/\/$/, '');
+import { isBrowser } from '../utils/isBrowser';
+import { stripBase } from '../utils/stripBase';
+import { deleteLastSlash } from '../utils/deleteLastSlash';
 const SSR = !isBrowser();
 
 export default function setHistoryMode() {

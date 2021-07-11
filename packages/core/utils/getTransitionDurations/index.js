@@ -63,27 +63,3 @@ function getDuration(_duration) {
   }
   return duration;
 }
-
-/**
- * @description Delay for async functions
- * @param {number} ms
- * @returns {Promise<void>}
- */
-export function delay(ms) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, ms);
-  });
-}
-
-/**
- * @description Is current environment - browser
- * @author flexdinesh/browser-or-node
- * @returns {boolean}
- */
-export function isBrowser() {
-  return (
-    typeof window !== 'undefined' && typeof window.document !== 'undefined'
-  );
-}

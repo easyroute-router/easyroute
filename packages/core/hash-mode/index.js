@@ -1,4 +1,4 @@
-const stripBase = (url, base) => (Boolean(base) ? url.replace(base, '') : url);
+import { stripBase } from '../utils/stripBase';
 
 export default function setHashMode() {
   this.modeName = 'hash';

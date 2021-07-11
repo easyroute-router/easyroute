@@ -1,0 +1,32 @@
+{
+  "name": "@easyroute/svelte",
+  "version": "3.2.0",
+  "description": "Config-based router for Svelte in style of Vue Router with SSR support",
+  "author": "Alexey Solovyov <plotinka@lyoha.info>",
+  "homepage": "https://github.com/easyroute-router/easyroute#readme",
+  "license": "MIT",
+  "main": "./index.js",
+  "types": "./types.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easyroute-router/easyroute.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/easyroute-router/easyroute/issues"
+  },
+  "devDependencies": {
+    "svelte": "^3.38.3"
+  }
+}

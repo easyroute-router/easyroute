@@ -18,6 +18,10 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
     "lib": ["es5", "es6", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "paths": {
+      "@utils": ["../utils"]
+    }
   },
   "include": [
     "src/**/*",

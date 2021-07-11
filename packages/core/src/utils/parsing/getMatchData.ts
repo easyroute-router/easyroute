@@ -1,4 +1,4 @@
-import { deleteEdgeSlashes } from '../path/deleteEdgeSlashes';
+import { deleteEdgeSlashes } from '../../../utils/deleteEdgeSlashes';
 import { generateId } from '../misc/generateId';
 import { RouteComponent, RouteDefineData, RouteMatchData } from '../../types';
 import regexparam from 'regexparam';

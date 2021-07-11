@@ -1,5 +1,5 @@
-import { deleteLastSlash } from './deleteLastSlash';
-import { deleteFirstSlash } from './deleteFirstSlash';
+import { deleteLastSlash } from '../../../utils/deleteLastSlash';
+import { deleteFirstSlash } from '../../../utils/deleteFirstSlash';
 import { deleteQueryTrailingSlash } from './deleteQueryTrailingSlash';
 
 export function constructUrl(url: string, base: string, omitTrailing = false) {

@@ -1,9 +1,7 @@
 import { downloadDynamicComponents } from './utils/code-splitting/downloadDynamicComponents';
-import { isBrowser } from '../utils';
 import { parseRoutes } from './utils/parsing/parseRoutes';
 import { getMatchData } from './utils/parsing/getMatchData';
 import { constructUrl } from './utils/path/constructUrl';
-import { deleteEdgeSlashes } from './utils/path/deleteEdgeSlashes';
 import { createObservable } from './utils/observable/createObservable';
 import {
   HookCommand,
@@ -15,6 +13,8 @@ import {
   RouterMode
 } from './types';
 import { createRouteObject } from './utils/parsing/createRouteObject';
+import { deleteEdgeSlashes } from '../utils/deleteEdgeSlashes';
+import { isBrowser } from '../utils/isBrowser';
 
 const SSR = !isBrowser();
 

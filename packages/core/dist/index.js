@@ -30,23 +30,6 @@ async function downloadDynamicComponents(matchedRoutes) {
     return await Promise.all(nonDynamic);
 }
 
-/**
- * @description Get durations of CSS transition (enter and leave)
- * @param {string} transitionName
- * @returns {{leavingDuration: number, enteringDuration: number}}
- */
-
-/**
- * @description Is current environment - browser
- * @author flexdinesh/browser-or-node
- * @returns {boolean}
- */
-function isBrowser() {
-  return (
-    typeof window !== 'undefined' && typeof window.document !== 'undefined'
-  );
-}
-
 function getRoutesTreeChain(allRoutes, currentRoute) {
     var _a;
     if (!currentRoute)
@@ -86,7 +69,8 @@ const deleteFirstSlash = (url) => url.replace(/^\//, '');
 
 const deleteLastSlash = (url) => url.replace(/\/$/, '');
 
-const deleteEdgeSlashes = (url) => deleteFirstSlash(deleteLastSlash(url));
+const deleteEdgeSlashes = (url) =>
+  deleteFirstSlash(deleteLastSlash(url));
 
 const generateId = () => Math.random().toString(36).substr(2, 9);
 
@@ -239,6 +223,17 @@ function createRouteObject(matchedRoutes, url) {
         fullPath: url,
         meta: (_a = currentMatched.meta) !== null && _a !== void 0 ? _a : {}
     };
+}
+
+/**
+ * @description Is current environment - browser
+ * @author flexdinesh/browser-or-node
+ * @returns {boolean}
+ */
+function isBrowser() {
+  return (
+    typeof window !== 'undefined' && typeof window.document !== 'undefined'
+  );
 }
 
 const SSR = !isBrowser();
