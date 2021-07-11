@@ -26,7 +26,6 @@ export interface RouterLinkProps
   to: string;
 }
 
-export default Router;
 export class RouterOutlet extends SvelteComponentTyped<RouterOutletProps> {}
 export class RouterLink extends SvelteComponentTyped<RouterLinkProps> {}
 export class EasyrouteProvider extends SvelteComponentTyped<{

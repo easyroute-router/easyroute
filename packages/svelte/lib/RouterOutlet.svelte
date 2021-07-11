@@ -35,6 +35,7 @@
         } else {
             await componentChangeWithTransition(
                 component,
+                currentRoute,
                 transition,
                 tcn => transitionClassName = tcn,
                 c => currentComponent = c,
@@ -72,7 +73,7 @@
     SSR_CONTEXT && pickRoute(router.currentMatched.getValue)
 </script>
 
-<div class:easyroute-outlet class={$$restProps.class + ' ' + transitionClassName}>
+<div class={'easyroute-outlet ' + $$restProps.class + ' ' + transitionClassName}>
     {#if firstRouteResolved}
         <svelte:component this={currentComponent} router={router} />
     {/if}

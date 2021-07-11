@@ -26,7 +26,8 @@
   "bugs": {
     "url": "https://github.com/easyroute-router/easyroute/issues"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@easyroute/core": "2.0.0",
     "svelte": "^3.38.3"
   }
 }
