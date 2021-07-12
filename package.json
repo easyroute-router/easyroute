@@ -32,7 +32,8 @@
   "scripts": {
     "postinstall": "lerna bootstrap --hoist --no-ci",
     "build": "lerna run build --concurrency=1 --stream",
-    "test": "lerna run test --concurrency=1 --stream"
+    "test": "lerna run test --concurrency=1 --stream",
+    "publish:npm": "lerna publish from-package"
   },
   "workspaces": [
     "packages/*"
