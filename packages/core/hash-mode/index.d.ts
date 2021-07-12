@@ -1,2 +1,2 @@
-declare function setHashMode(): void
-export default setHashMode
+declare function setHashMode(): void;
+export default setHashMode;
