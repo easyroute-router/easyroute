@@ -4,6 +4,7 @@ import { deleteLastSlash } from '../utils/deleteLastSlash';
 const SSR = !isBrowser();
 
 export default function setHistoryMode() {
+  this.modeName = 'history';
   this.changeUrl = function (url, doPushState = true) {
     doPushState &&
       !SSR &&
@@ -18,6 +19,7 @@ export default function setHistoryMode() {
   this.go = function (howFar) {
     window.history.go(howFar);
   };
+  if (SSR) return;
   this.parseRoute(
     stripBase(
       `${deleteLastSlash(window.location.pathname)}/${window.location.search}`,

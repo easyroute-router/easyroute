@@ -1,7 +1,7 @@
 import '@babel/polyfill';
-import Router from '../dist';
-import setHistoryMode from '../history-mode';
-import setHashMode from '../hash-mode';
+import Router from '@easyroute/core';
+import setHashMode from '@easyroute/core/hash-mode';
+import setHistoryMode from '@easyroute/core/history-mode';
 
 let windowSpy;
 

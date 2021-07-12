@@ -149,7 +149,7 @@ function createObservable(initial) {
             listener(_value);
             return () => delete _listeners[id];
         },
-        setValue(v) {
+        set(v) {
             _value = v;
             Object.values(_listeners).forEach((l) => l(v));
         }
@@ -281,9 +281,9 @@ class Router {
             return;
         // @ts-ignore
         this.changeUrl(constructUrl(url, this.base, this.settings.omitTrailingSlash), doPushState, toRouteInfo);
-        this.currentRouteData.setValue(toRouteInfo);
-        this.currentRouteFromData.setValue(fromRouteInfo);
-        this.currentMatched.setValue(await downloadDynamicComponents(matched));
+        this.currentRouteData.set(toRouteInfo);
+        this.currentRouteFromData.set(fromRouteInfo);
+        this.currentMatched.set(await downloadDynamicComponents(matched));
         this.runHooksArray(this.afterEachHooks, toRouteInfo, fromRouteInfo, 'after');
     }
     async executeHook(to, from, hook, type) {

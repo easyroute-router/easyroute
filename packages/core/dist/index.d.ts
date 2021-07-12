@@ -11,17 +11,17 @@ export default class Router {
     currentMatched: {
         readonly getValue: RouteMatchData[];
         subscribe(listener: import("./types").ObservableListener<RouteMatchData[]>): () => boolean;
-        setValue(v: any): void;
+        set(v: any): void;
     };
     currentRouteData: {
         readonly getValue: RouteInfoData;
         subscribe(listener: import("./types").ObservableListener<RouteInfoData>): () => boolean;
-        setValue(v: any): void;
+        set(v: any): void;
     };
     currentRouteFromData: {
         readonly getValue: RouteInfoData | null;
         subscribe(listener: import("./types").ObservableListener<RouteInfoData | null>): () => boolean;
-        setValue(v: any): void;
+        set(v: any): void;
     };
     silentControl: any;
     constructor(settings: RouterSettings);

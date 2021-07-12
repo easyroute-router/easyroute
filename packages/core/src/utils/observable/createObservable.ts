@@ -14,7 +14,7 @@ export function createObservable<T>(initial: T) {
       listener(_value);
       return () => delete _listeners[id];
     },
-    setValue(v: any) {
+    set(v: any) {
       _value = v;
       Object.values(_listeners).forEach((l) => l(v));
     }

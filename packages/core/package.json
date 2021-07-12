@@ -11,15 +11,25 @@
     "application"
   ],
   "author": "Alexey Solovyov <plotinka@lyoha.info>",
-  "homepage": "",
+  "homepage": "https://github.com/easyroute-router/easyroute/tree/main/packages/core#readme",
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "src": "src",
+    "dist": "dist",
+    "hash-mode": "hash-mode",
+    "history-mode": "history-mode",
+    "silent-mode": "silent-mode",
+    "utils": "utils",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist",
+    "silent-mode",
+    "history-mode",
+    "hash-mode",
+    "utils"
   ],
   "publishConfig": {
     "access": "public"
@@ -30,5 +40,9 @@
     "dev": "rollup --mode=development -c -w",
     "lint": "eslint '*/**/*.{js,ts}' --fix",
     "test:lint": "npm run lint && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easyroute-router/easyroute.git"
   }
 }

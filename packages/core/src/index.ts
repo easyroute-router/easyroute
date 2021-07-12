@@ -76,9 +76,9 @@ export default class Router {
       doPushState,
       toRouteInfo as RouteInfoData
     );
-    this.currentRouteData.setValue(toRouteInfo);
-    this.currentRouteFromData.setValue(fromRouteInfo);
-    this.currentMatched.setValue(await downloadDynamicComponents(matched));
+    this.currentRouteData.set(toRouteInfo);
+    this.currentRouteFromData.set(fromRouteInfo);
+    this.currentMatched.set(await downloadDynamicComponents(matched));
     this.runHooksArray(
       this.afterEachHooks,
       toRouteInfo as RouteInfoData,

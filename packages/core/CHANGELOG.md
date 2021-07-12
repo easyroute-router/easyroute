@@ -1,6 +1,9 @@
 ### v2.0.0
 * **breaking**: modes are functions from now;
 * **breaking**: utils functions are in separate modules;
+* feat: util-function for CSS transitions is now on core-side;
+* refactor: observable is now created by a function, `setValue` 
+  method has been renamed to `set`;
 * refactor: size reduction and speed up.
 
 ### v1.4.4

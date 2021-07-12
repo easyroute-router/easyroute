@@ -1,6 +1,6 @@
 import '@babel/polyfill';
-import Router from '../dist';
-import setHistoryMode from '../history-mode';
+import Router from '@easyroute/core';
+import setHistoryMode from '@easyroute/core/history-mode';
 
 const config = {
   mode: setHistoryMode,

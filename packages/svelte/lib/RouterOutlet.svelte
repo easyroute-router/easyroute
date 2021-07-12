@@ -1,8 +1,7 @@
 <script>
-    import { setContext, getContext, onDestroy, onMount } from 'svelte';
-    import { getTransitionDurations } from '@easyroute/core/utils/getTransitionDurations';
-    import { delay } from '@easyroute/core/utils/delay';
-    import { isBrowser } from '@easyroute/core/utils/isBrowser';
+    import {setContext, getContext, onDestroy} from 'svelte';
+    import {getTransitionDurations} from '@easyroute/core/utils/getTransitionDurations';
+    import {isBrowser} from '@easyroute/core/utils/isBrowser';
     import componentChangeWithTransition from '@easyroute/core/utils/componentChangeWithTransition';
 
     export let transition = null, forceRemount = false, name = 'default';
@@ -19,14 +18,15 @@
     let prevRouteId = null;
     let currentComponent = null;
     let transitionClassName = '';
-    let firstRouteResolved = SSR_CONTEXT
-    let unsubscribe = null
+    let firstRouteResolved = SSR_CONTEXT;
 
     if (!router) {
         throw new Error('[Easyroute] RouterOutlet: no router instance found. Did you forget to wrap your ' +
             'root component with <EasyrouteProvider>?');
     }
-    setContext('easyrouteContext', { depth, router });
+
+    const currentMatched = router.currentMatched;
+    setContext('easyrouteContext', {depth, router});
 
     async function changeComponent(component, currentRoute) {
         if (prevRouteId === currentRoute.id && !forceRemount) return;
@@ -43,7 +43,7 @@
                 transitionData
             );
         }
-        prevRouteId = currentRoute.id
+        prevRouteId = currentRoute.id;
     }
 
     async function pickRoute(routes) {
@@ -52,29 +52,20 @@
             let component;
             if (name === 'default') component = currentRoute.component || currentRoute.components.default;
             else component = currentRoute.components ? currentRoute.components[name] : null;
-            changeComponent(component, currentRoute);
-            await delay(transitionData ? transitionData.leavingDuration : 0);
+            await changeComponent(component, currentRoute);
             firstRouteResolved = true;
         } else {
             changeComponent(null, `${Date.now()}-nonexistent-route`);
         }
     }
 
-    onMount(() => {
-        if (!SSR_CONTEXT) {
-            unsubscribe = router.currentMatched.subscribe(routes => pickRoute(routes));
-        }
-    });
+    SSR_CONTEXT && pickRoute(router.currentMatched.getValue);
 
-    onDestroy(() => {
-        unsubscribe && unsubscribe();
-    });
-
-    SSR_CONTEXT && pickRoute(router.currentMatched.getValue)
+    $: pickRoute($currentMatched);
 </script>
 
 <div class={'easyroute-outlet ' + $$restProps.class + ' ' + transitionClassName}>
     {#if firstRouteResolved}
-        <svelte:component this={currentComponent} router={router} />
+        <svelte:component this={currentComponent} router={router}/>
     {/if}
 </div>
