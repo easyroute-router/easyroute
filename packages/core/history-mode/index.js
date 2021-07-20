@@ -20,13 +20,17 @@ export default function setHistoryMode() {
     window.history.go(howFar);
   };
   if (SSR) return;
-  this.parseRoute(
-    stripBase(
-      `${deleteLastSlash(window.location.pathname)}/${window.location.search}`,
-      this.base
-    ),
-    true
-  );
+  Promise.resolve().then(() => {
+    this.parseRoute(
+      stripBase(
+        `${deleteLastSlash(window.location.pathname)}/${
+          window.location.search
+        }`,
+        this.base
+      ),
+      true
+    );
+  });
   window.addEventListener('popstate', (ev) => {
     ev.state
       ? this.parseRoute(stripBase(ev.state.url, this.base), false)

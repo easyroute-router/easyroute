@@ -1,12 +1,12 @@
 import Router from '../../dist';
-import { RouteInfoData } from '../../dist/types';
+import { RouteInfoData, RouteMatchData } from '../../dist/types';
 
 declare function componentChangeWithTransition(
   component: any,
-  currentRoute: RouteInfoData,
+  currentRoute: RouteInfoData | RouteMatchData,
   transition: string,
-  classCallback: (string) => void,
-  componentCallback: (any) => void,
+  classCallback: (c: string) => void,
+  componentCallback: (c: any) => void,
   router: Router,
   transitionData: {
     enteringDuration: number;

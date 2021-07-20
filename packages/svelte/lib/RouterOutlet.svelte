@@ -33,7 +33,7 @@
         if (!transitionData) {
             currentComponent = component;
         } else {
-            await componentChangeWithTransition(
+            componentChangeWithTransition(
                 component,
                 currentRoute,
                 transition,
