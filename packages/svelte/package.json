@@ -36,7 +36,7 @@
     "@easyroute/core": "2.0.0-alpha.1"
   },
   "peerDependencies": {
-    "svelte": "^3.38.3"
+    "svelte": "^3.0.0"
   },
   "keywords": [
     "svelte",

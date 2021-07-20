@@ -1,6 +1,6 @@
 {
   "name": "@easyroute/react",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.0",
   "description": "Config-based router for React in style of Vue Router",
   "keywords": [
     "react",
@@ -16,10 +16,14 @@
   "main": "./index.js",
   "directories": {
     "lib": "lib",
+    "dist": "dist",
+    "useCurrentRoute": "useCurrentRoute",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist",
+    "useCurrentRoute"
   ],
   "publishConfig": {
     "access": "public"
@@ -29,12 +33,19 @@
     "url": "git+https://github.com/easyroute-router/easyroute.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest",
+    "build": "rm -rf ./dist && tsc"
   },
   "bugs": {
     "url": "https://github.com/easyroute-router/easyroute/issues"
   },
   "dependencies": {
     "@easyroute/core": "^2.0.0-alpha.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.14"
   }
 }
