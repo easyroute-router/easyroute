@@ -1,6 +1,6 @@
 {
   "name": "@easyroute/react",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Config-based router for React in style of Vue Router",
   "keywords": [
     "react",
@@ -23,7 +23,9 @@
   "files": [
     "lib",
     "dist",
-    "useCurrentRoute"
+    "useCurrentRoute",
+    "index.js",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"
