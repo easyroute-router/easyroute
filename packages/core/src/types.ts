@@ -8,7 +8,7 @@ export interface RouteDefineData {
   name?: string;
   meta?: Record<string, unknown>;
   beforeEnter?: BeforeRouterHook;
-  transitionOut?: AfterRouterHook;
+  transitionOut?: BeforeRouterHook;
   children?: RouteDefineData[];
 }
 
