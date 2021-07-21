@@ -33,7 +33,7 @@
     "url": "https://github.com/easyroute-router/easyroute/issues"
   },
   "dependencies": {
-    "@easyroute/core": "2.0.0-alpha.2"
+    "@easyroute/core": "2.0.0-alpha.3"
   },
   "peerDependencies": {
     "svelte": "^3.0.0"

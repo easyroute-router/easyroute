@@ -2,7 +2,6 @@
 
 <p align="left">
 <img src="https://img.shields.io/npm/v/@easyroute/react.svg">
-<img src="https://badgen.net/bundlephobia/minzip/@easyroute/react">
 </p>
 
 ### Habitual router in your projects
