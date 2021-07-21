@@ -40,7 +40,7 @@ Try [this code sandbox](https://codesandbox.io/s/react-easyroute-simpliest-demo-
 Please see [DOCUMENTATION](https://react-easyroute.lyoha.info). Router is still developing and new features are coming out frequently.
 
 ### Under the hood
-This is React bindings for [Easyroute](https://github.com/lyohaplotinka/easyroute) framework-agnostic
+This is React bindings for [Easyroute](https://github.com/easyroute-router/easyroute/tree/main/packages/core) framework-agnostic
 library.
 
 #### Contact me:
