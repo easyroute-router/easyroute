@@ -1,6 +1,6 @@
 {
   "name": "@easyroute/react",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0",
   "description": "Config-based router for React in style of Vue Router",
   "keywords": [
     "react",

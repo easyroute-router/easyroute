@@ -1,6 +1,6 @@
 ### v3.2.0
 * **BREAKING**: `useCurrentRoute` now returns a svelte-like store for `$` syntax;
-* `easyroute-core` updated to 2.0.0;
+* `@easyroute/core` updated to 2.0.0;
 * `RouterOutlet.svelte` refactored, size reduction.
 
 ### v3.1.2

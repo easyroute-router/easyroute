@@ -8,7 +8,7 @@ applications**
 ### Bindings
 |  Svelte&nbsp;3 | [GitHub](https://github.com/easyroute-router/easyroute/tree/main/packages/svelte), [NPM](https://www.npmjs.com/package/@easyroute/svelte) |
 |---|---|
-| React  | _coming soon_  |
+| React  | [GitHub](https://github.com/easyroute-router/easyroute/tree/main/packages/react), [NPM](https://www.npmjs.com/package/@easyroute/react) |
 
 TL;DR Features:
 * Config-based router (just like Vue Router)
