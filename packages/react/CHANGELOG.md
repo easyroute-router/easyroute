@@ -1,5 +1,5 @@
 ### v2.0.1
-* `@easyroute/core` updated to 2.0.1;
+* `@easyroute/core` updated to 2.0.2;
 * feat: add `replace` prop for RouterLink.
 
 ### v2.0.0

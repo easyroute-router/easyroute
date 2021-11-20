@@ -24,8 +24,8 @@ export default function setHistoryMode() {
         url
       );
   };
-  this.replace = function (url) {
-    !SSR && window.history.replaceState({ url }, url, url);
+  this.replace = (url) => {
+    this.parseRoute(url, true, true);
   };
   this.go = function (howFar) {
     window.history.go(howFar);

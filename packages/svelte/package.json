@@ -1,6 +1,6 @@
 {
   "name": "@easyroute/svelte",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Config-based router for Svelte in style of Vue Router with SSR support",
   "author": "Alexey Solovyov <plotinka@lyoha.info>",
   "homepage": "https://easyroute.lyoha.info",
@@ -33,7 +33,7 @@
     "url": "https://github.com/easyroute-router/easyroute/issues"
   },
   "dependencies": {
-    "@easyroute/core": "2.0.1"
+    "@easyroute/core": "2.0.2"
   },
   "peerDependencies": {
     "svelte": "^3.0.0"

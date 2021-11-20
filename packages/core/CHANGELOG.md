@@ -1,4 +1,4 @@
-### v2.0.1
+### v2.0.2
 * **feat**: add "replace" method for history mode (#3);
 * **fix:** add "go" method placeholder in core class (#4).
 
