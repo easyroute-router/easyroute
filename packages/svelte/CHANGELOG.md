@@ -1,3 +1,7 @@
+### v3.2.1
+* `@easyroute/core` updated to 2.0.1;
+* feat: add `replace` prop for RouterLink.
+
 ### v3.2.0
 * **BREAKING**: `useCurrentRoute` now returns a svelte-like store for `$` syntax;
 * `@easyroute/core` updated to 2.0.0;

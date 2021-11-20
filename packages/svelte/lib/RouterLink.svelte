@@ -1,7 +1,7 @@
-
 <script>
     import { getContext } from 'svelte'
     export let to;
+    export let replace = false;
     const context = getContext('easyrouteContext')
     const router = context ? context.router : null
     const attrs = Object.assign({}, $$props)
@@ -15,7 +15,7 @@
         if (!router) {
             throw new Error('[Easyroute] Router instance not found in RouterLink')
         }
-        router.push(to)
+        router[replace ? 'replace' : 'push'](to)
     }
     function sanitizeAttrs() {
         delete attrs.to

@@ -1,25 +1,29 @@
+### v2.0.1
+* **feat**: add "replace" method for history mode (#3);
+* **fix:** add "go" method placeholder in core class (#4).
+
 ### v2.0.0
 * **breaking**: modes are functions from now;
 * **breaking**: utils functions are in separate modules;
-* feat: util-function for CSS transitions is now on core-side;
-* refactor: observable is now created by a function, `setValue` 
+* **feat**: util-function for CSS transitions is now on core-side;
+* **refactor:** observable is now created by a function, `setValue` 
   method has been renamed to `set`;
-* refactor: size reduction and speed up.
+* **refactor:** size reduction and speed up.
 
 ### v1.4.4
-* feat: updated async component check regexp
+* **feat**: updated async component check regexp
   (vite compatibility again);
-* refactor: different types for before and after hooks.
+* **refactor:** different types for before and after hooks.
 
 ### v1.4.3
-* refactor: better code-split check (vite compatibility)
+* **refactor:** better code-split check (vite compatibility)
 
 ### v1.4.2
-* fix: planning microtask for first route 
+* **fix:** planning microtask for first route 
 parsing (broken initial hooks in last release)
 
 ### v1.4.1
-* fix: types for `meta` and `children` property;
+* **fix:** types for `meta` and `children` property;
 * removed macrotask planning in the constructor.
 
 ### v1.4.0
@@ -27,16 +31,16 @@ parsing (broken initial hooks in last release)
   `afterEach` for global hooks, please pass 
   callbacks to methods with the same names 
   (for example, `router.beforeEach((to, from, next) => ...)`;
-* feat: introducing `router.transitionOut` hooks 
+* **feat**: introducing `router.transitionOut` hooks 
   to handle operations after the exit animation 
   has finished;
-* refactor: better types declaration.
+* **refactor:** better types declaration.
 
 ### v1.3.5
-* fix: wrong `from` route data in hooks.
+* **fix:** wrong `from` route data in hooks.
 
 ### v1.3.4-1
-* fix: broken url set if slash trailing enabled.
+* **fix:** broken url set if slash trailing enabled.
 
 ### v1.3.4
 * Rollback to full routes tree search;

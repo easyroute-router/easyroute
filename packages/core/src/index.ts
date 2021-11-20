@@ -49,7 +49,7 @@ export default class Router {
       throw new Error('[Easyroute] SSR only works with "history" router mode');
   }
 
-  public async parseRoute(url: string, doPushState = true) {
+  public async parseRoute(url: string, doPushState = true, replace = false) {
     url = url.replace(/^#/, '');
     const matched = parseRoutes(this.routes, url.split('?')[0]);
     if (!matched) return;
@@ -74,7 +74,8 @@ export default class Router {
     this.changeUrl(
       constructUrl(url, this.base, this.settings.omitTrailingSlash),
       doPushState,
-      toRouteInfo as RouteInfoData
+      toRouteInfo as RouteInfoData,
+      replace
     );
     this.currentRouteData.set(toRouteInfo);
     this.currentRouteFromData.set(fromRouteInfo);
@@ -113,11 +114,24 @@ export default class Router {
 
   public async push(url: string) {
     this.ignoreEvents = true;
-    await this.parseRoute(url);
+    await this.parseRoute(url, true, false);
+  }
+
+  public async replace(url: string) {
+    if (this.modeName !== 'history')
+      throw new ReferenceError(
+        `[easyroute] cannot replace "${url}": "replace" method only available in history mode`
+      );
+  }
+
+  public go(howFar: number) {
+    console.warn(
+      `[easyroute] cannot go ${howFar}: "go" method is not implemented in`,
+      this.modeName
+    );
   }
 
   public back() {
-    // @ts-ignore
     this.go(-1);
   }
 
