@@ -25,9 +25,11 @@ export default class Router {
     };
     silentControl: any;
     constructor(settings: RouterSettings);
-    parseRoute(url: string, doPushState?: boolean): Promise<void>;
+    parseRoute(url: string, doPushState?: boolean, replace?: boolean): Promise<void>;
     private executeHook;
     push(url: string): Promise<void>;
+    replace(url: string): Promise<void>;
+    go(howFar: number): void;
     back(): void;
     beforeEach(hook: BeforeRouterHook): void;
     afterEach(hook: AfterRouterHook): void;

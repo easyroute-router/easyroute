@@ -5,7 +5,15 @@ const SSR = !isBrowser();
 
 export default function setHistoryMode() {
   this.modeName = 'history';
-  this.changeUrl = function (url, doPushState = true) {
+  this.changeUrl = function (
+    url,
+    doPushState = true,
+    toRouteInfo = undefined,
+    replace = false
+  ) {
+    if (replace) {
+      return !SSR && window.history.replaceState({ url }, url, url);
+    }
     doPushState &&
       !SSR &&
       window.history.pushState(
@@ -15,6 +23,9 @@ export default function setHistoryMode() {
         url,
         url
       );
+  };
+  this.replace = function (url) {
+    !SSR && window.history.replaceState({ url }, url, url);
   };
   this.go = function (howFar) {
     window.history.go(howFar);

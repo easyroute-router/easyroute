@@ -264,7 +264,7 @@ class Router {
         if (SSR && this.modeName !== 'history')
             throw new Error('[Easyroute] SSR only works with "history" router mode');
     }
-    async parseRoute(url, doPushState = true) {
+    async parseRoute(url, doPushState = true, replace = false) {
         url = url.replace(/^#/, '');
         const matched = parseRoutes(this.routes, url.split('?')[0]);
         if (!matched)
@@ -280,7 +280,7 @@ class Router {
         if (!allowNext)
             return;
         // @ts-ignore
-        this.changeUrl(constructUrl(url, this.base, this.settings.omitTrailingSlash), doPushState, toRouteInfo);
+        this.changeUrl(constructUrl(url, this.base, this.settings.omitTrailingSlash), doPushState, toRouteInfo, replace);
         this.currentRouteData.set(toRouteInfo);
         this.currentRouteFromData.set(fromRouteInfo);
         this.currentMatched.set(await downloadDynamicComponents(matched));
@@ -311,10 +311,16 @@ class Router {
     }
     async push(url) {
         this.ignoreEvents = true;
-        await this.parseRoute(url);
+        await this.parseRoute(url, true, false);
+    }
+    async replace(url) {
+        if (this.modeName !== 'history')
+            throw new ReferenceError(`[easyroute] cannot replace "${url}": "replace" method only available in history mode`);
+    }
+    go(howFar) {
+        console.warn(`[easyroute] cannot go ${howFar}: "go" method is not implemented in`, this.modeName);
     }
     back() {
-        // @ts-ignore
         this.go(-1);
     }
     beforeEach(hook) {
