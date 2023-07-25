@@ -1,3 +1,6 @@
+### v3.2.3
+* add support for Svelte 4
+
 ### v3.2.2
 * `@easyroute/core` updated to 2.0.2;
 * feat: add `replace` prop for RouterLink.
